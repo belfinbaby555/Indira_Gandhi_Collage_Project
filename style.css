@@ -1,0 +1,286 @@
+html,body{
+margin:0;
+font-family: "Poppins", sans-serif;
+}
+.topbar{
+width:100vw;
+height:75px;
+position:fixed;
+top:0;
+background-color:white;
+z-index:10;
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+box-shadow:1px 1px 5px grey;
+}
+.topbar > img{
+width:125px;
+height:fit-content;
+margin: auto 10px;
+}
+nav{
+width:300px;
+height:100svh;
+display:flex;
+flex-direction:column;
+position:fixed;
+top:0;
+left:0;
+background-color:white;
+box-sizing:border-box;
+padding:75px 10px;
+box-shadow:1px 1px 5px grey;
+}
+nav > h3{
+color:black;
+text-transform:capitalize;
+font-size:25px;
+font-weight:600;
+border-bottom:1px solid grey;
+text-align:center;
+padding-bottom:20px;
+}
+nav > a{
+display:flex;
+flex-direction:row;
+line-height:50px;
+margin:3px;
+border-radius:5px;
+cursor: pointer;
+}
+#h{
+background-color:rgba(0,0,250,0.1);
+}
+#l{
+color:red;
+}
+nav > a > img{
+width:30px;
+height:fit-content;
+margin:10px;
+}
+.container{
+ width:calc(100vw - 300px);
+ height:calc(100vh - 75px);
+ margin-left:auto;
+ background-color:white;
+padding-top:100px;
+ 
+}
+.upload{
+width:400px;
+height:200px;
+background-color:white;
+margin :0px auto;
+display:flex;
+flex-direction:column;
+box-sizing:border-box;
+padding:10px;
+}
+.search{
+    width: calc(100% - 50px);
+    height: 45px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    margin: auto;
+}
+.search > img{
+    width: 25px;
+    height: fit-content;
+    margin: 10px;
+    opacity: 0.9;
+
+}
+.search > input{
+    width: calc(100% - 50px);
+    outline: 0;
+    border: 0;
+    font-size: 15px;
+}
+.upload > h3{
+    text-transform: capitalize;
+    margin: 20px 0px;
+    font-size: 25px;
+    font-weight: 500;
+}
+.explore{
+    width: 180px;
+    height: 170px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(55, 118, 255, 0.3);
+    box-sizing: border-box;
+    padding: 10px;
+    justify-content: space-between;
+    
+}
+.explore >  h4{
+    font-size: 25px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+.explore > button{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+    outline: 0;
+    border: 0;
+    font-size: 18px;
+}
+.teachers {
+    width: 100%;
+    height: 70px;
+    border-radius: 10px;
+    background-color: rgba(55, 118, 255, 0.3);
+    display: flex;
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 10px;
+}
+.teachers > img{
+    width: 50px;
+    height: 50px;
+    border-radius: 2000px;
+    margin: 5px;
+    border: 1px solid black;
+}
+.teachers > span{
+    display: flex;
+    flex-direction: column;
+    
+    margin-left: 10px;
+}
+.teachers > span > h5{
+    margin: 0;
+    font-weight: 500;
+    font-size: 18px;
+
+}
+.teachers > span > p{
+    margin: 0;
+    color: rgb(46, 46, 46);
+    font-size: 15px;
+}
+.people{
+width:400px;
+height:fit-content;
+background-color:white;
+margin :0px auto;
+display:flex;
+flex-direction:column;
+box-sizing:border-box;
+padding:10px;
+}
+.people > img{
+    width: 150px;
+    height: 150px;
+    border-radius: 1000px;
+    border: 1px solid black;
+    margin: auto;
+}
+.people > h3{
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 5px;
+    font-size: 30px;
+    font-weight: 500;
+    padding-bottom: 0;
+    height: 30px;
+}
+.people > h4{
+    text-align: center;
+    margin: 0;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+.personal_info{
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 255, 0.397);
+
+}
+.personal_info > p{
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 5px;
+}
+.education{
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 255, 0.397);
+}
+.education > p{
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 5px;
+}
+.nav_info{
+    display: flex;
+    flex-direction: column;
+}
+.nav_info > h4{
+    margin: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 0;
+}
+.nav_info > input{
+    margin:10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 20px;
+    font-size: 15px;
+}
+.nav_info > label{
+    font-size: 18px;
+
+}
+.about{
+width:400px;
+height:fit-content;
+background-color:white;
+margin :0px auto;
+display:flex;
+flex-direction:column;
+box-sizing:border-box;
+padding:10px;
+}
+.about > h1{
+    font-weight: 500;
+    font-size: 30px;
+    padding: 10px 0px;
+    margin: 0;
+}
+.about > p{
+    margin:0px;
+    margin-top: 10px;
+}
+.about > p > b{
+    color:blue;
+}
+.about > ol > li > b{
+    color:blue;
+}
+.about > h2{
+    font-size: 25px;
+    margin: 20px 0px;
+    font-weight: 500;
+}
+.about > h3{
+    color: blue;
+    margin: 0;
+}
