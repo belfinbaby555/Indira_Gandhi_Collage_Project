@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=0">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
 </head>
@@ -24,13 +24,13 @@
     <div class="container">
         <div id="home" style="display: none;">
 
-            <div class="upload" id="upload" style="display:block;">
+            <div class="upload" id="upload" style="display:none;">
                 <!-- {% csrf_token %} -->
                 <div class="search">
                     <img src="images/search.png"/>
                     <input type="search" placeholder="Search for class,teachers,..."/>
                 </div>
-                <h3>expolore classes</h3>
+                <h3>explore classes</h3>
                 <span style="display: flex; justify-content: space-between;">
                 <div class="explore">
                         <h4>Chemistry Lab</h4>
@@ -64,27 +64,42 @@
                 <h3>Teacher 1</h3>
                 <h4>Asst. professor</h4>
             <div class="personal_info">
+                <h5>General Information</h5>
                 <p id="name">Name: Teacher 1</p>
                 <p id="Age">Age: 48</p>
+                <p id="email">Email: examole@gmail.com</p>
+                <p id="phone">Phone: +91 1234556789</p>
             </div>
             <div class="education">
-                <p id="btech">Btech: abc collage o engineering</p>
-                <p id="btech">Mtech: abc collage o engineering</p>
+                <h5>Experience</h5>
+                <p id="btech">Lecturer | iit kanpur<br>
+                    <b>Jnuary 2002 - march 2005</b>
+                </p>
+                <p id="btech">assitant professor<br><b>march 2003 - january 2005</b></p>
             </div>
+            
             </div>
         </div>
 
 
         <div class="people" id="report" style="display: flex;">
-            <div class="nav_info">
+            <div class="nav_info" style="display: none;">
                 <h4>Find class</h4>
-                <label for="from">From:</label>
-                <input type="text" id="from" class="from" placeholder="From"/>
-                <label for="to">To:</label>
-                <input type="text" id="to" class="to" placeholder="To"/>
+                <label for="floor">Enter Floor Number :</label>
+                <input type="text" id="floor" class="from" placeholder="Type '1' for  first floor"/>
+                <label for="from">Enter Current location :</label>
+                <input type="text" id="from" class="from" placeholder="Type 'Entrance'"/>
+                <label for="to">Enter Destination :</label>
+                <input type="text" id="to" class="to" placeholder="Type 'S6-ECE"/>
+                <button>Find Class</button>
             </div>
             <div class="map">
-
+                <h4>Navigation</h4>
+                <div class="floor-map">
+                    <svg width="100%" height="100%">
+                        <line x1="0" y1="0" x2="100%" y2="100%" style="stroke:blue;stroke-width:5" />
+                    </svg>
+                </div>
             </div>
         </div>
 
