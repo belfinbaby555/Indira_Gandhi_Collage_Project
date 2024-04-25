@@ -16,28 +16,32 @@ class MallNavigator:
         height_ratio = new_height / original_height
 
         data = {
-            "entrance": (330, 32, 0),
-            "c1": (202, 37, 0),
-            "c2": (190, 100, 0),
-            "c3": (190, 136, 0),
-            "c4": (190, 176, 0),
-            "c5": (190, 207, 0),
-            "c5": (190, 245, 0),
-            "c6": (190, 278, 0),
-            "vegetables": (92, 100, 0),
-            "cleaning":(300,102,0),
-            "dairy":(102,137,0),
-            "beverage":(280,136,0),
-            "fruits":(108,173,0),
-            "snacks":(289,175,0),
-            "clothes":(100,206,0),
-            "waiting":(272,206,0),
-            "hardware":(80,240,0),
-            "stationary":(272,246,0),
-            "food":(109,275,0),
-            "electronics":(302,279,0),
-            "c7":(190,278,0),
-            "ec":(190,203,0),
+            "porch": (272, 326,0),
+            "c1": (265, 232,0),
+            "c2":(321, 232,0),
+            "c3":(213, 225,0),
+            "toilet":(213, 150,0),
+            "store":(154, 230,0),
+            "library":(152, 193,0),
+            "stairs floor 0":(274, 185,0),
+            "iedc room":(414, 179,0),
+            "micro controller lab":(500, 179,0),
+            "sector1":(199, 195,0),
+            "security room": (202, 281,0),
+            "sector2":(525, 196,0),
+            "eee staff room":(525, 196,0),
+            "class room floor 0":(525, 196,0),
+            "power electronics lab":(349, 215,0),
+            "c4":(344, 201,0),  
+            "c5": (569, 217,0), 
+            "digital lab": (659, 217,0), 
+            "c6": (524, 165,0),
+            "circuit lab pcb and prototyping lab": (642, 165,0),      
+                
+               
+            
+                    
+            
         }
 
         self.data = {}
@@ -60,27 +64,51 @@ class MallNavigator:
     def create_connections(self):
         for name, coordinates in self.data.items():
             self.add_location(name, coordinates[0], coordinates[1], coordinates[2])
-        self.add_connection("entrance", "c1") 
+        self.add_connection("porch", "c1") 
+        self.add_connection("porch", "security room")
         self.add_connection("c1", "c2") 
-        self.add_connection("c2", "c3") 
-        self.add_connection("c3", "c4") 
-        self.add_connection("c4", "c5") 
-        self.add_connection("c5", "c6") 
-        self.add_connection("c4","ec")
-        self.add_connection("ec","c5")
-        self.add_connection("c6", "c7") 
-        self.add_connection("c2", "vegetables")
-        self.add_connection("c2", "cleaning")  
-        self.add_connection("c3", "dairy")  
-        self.add_connection("c3", "beverage") 
-        self.add_connection("c4", "fruits")  
-        self.add_connection("c4", "snacks") 
-        self.add_connection("ec", "clothes")  
-        self.add_connection("ec", "waiting") 
-        self.add_connection("c5", "hardware")  
-        self.add_connection("c5", "stationary") 
-        self.add_connection("c6", "food")  
-        self.add_connection("c6", "electronics")
+        self.add_connection("c1", "c3") 
+        self.add_connection("c3", "store") 
+        self.add_connection("c3", "sector1")
+        self.add_connection("sector1", "library")
+        self.add_connection("sector1", "toilet")
+        self.add_connection("sector1", "store")
+        self.add_connection("staris floor 0", "iedc room")
+        self.add_connection("iedc room", "micro controller lab")
+        self.add_connection("micro controller lab", "sector2")
+        self.add_connection("sector2", "eee staff room")
+        self.add_connection("class room floor 0", "sector2")
+        self.add_connection("idec room", "power electronics lab")
+        self.add_connection("class room floor 0", "sector2")
+        self.add_connection("c4", "power electronics lab")
+        self.add_connection("sector2", "power electronics lab")
+        self.add_connection("stairs floor 0", "c4")
+        self.add_connection("c4", "c2")
+        self.add_connection("c5", "sector2")
+        self.add_connection("c4", "c2")
+        self.add_connection("digital lab", "c5")
+        self.add_connection("sector2", "c6")
+        self.add_connection("c6","circuit lab pcb and prototyping lab")
+
+        
+        
+
+
+       
+
+
+        
+
+        
+ 
+ 
+
+
+
+
+
+        
+
 
         
             
