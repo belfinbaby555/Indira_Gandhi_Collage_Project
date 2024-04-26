@@ -6,11 +6,11 @@ class MallNavigator:
 
     def __init__(self):
         self.graph = nx.Graph()
-        original_width = 350
-        original_height = 400
+        original_width = 768
+        original_height = 445
 
-        new_width = 300
-        new_height = 490
+        new_width = 768
+        new_height = 445
 
         width_ratio = new_width / original_width
         height_ratio = new_height / original_height
