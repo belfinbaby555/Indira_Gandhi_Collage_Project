@@ -37,7 +37,8 @@ class MallNavigator:
             "c5": (569, 217,0), 
             "digital lab": (659, 217,0), 
             "c6": (524, 165,0),
-            "circuit lab pcb and prototyping lab": (642, 165,0),      
+            "circuit lab pcb and prototyping lab": (642, 165,0),
+            "s0":(274, 132,0),
             #floor 1
             "stairs floor 1": (483, 160,1),
             "iqac room":(529, 157,1),
@@ -56,6 +57,7 @@ class MallNavigator:
             "toilet floor 1":(116, 98,1),
             "s6 civil":(118, 119,1),
             "s8 civil":(117, 306,1),
+            "s1":(486, 97,1),   
             #floor 2
             "stairs floor 2": (480, 160,2),
             "s2 cse 2":(533, 159,2),
@@ -70,7 +72,8 @@ class MallNavigator:
             "s6 combined class":(207, 156,2),
             "toilet floor 2":(116, 102,2),   
             "s6 cse 1":(123, 117,2),
-            "s6 cse 2":(121, 305,2),   
+            "s6 cse 2":(121, 305,2),
+            "s2":(485, 91,2),      
              
             
         }
@@ -103,6 +106,7 @@ class MallNavigator:
         self.add_connection("c3", "store") 
         self.add_connection("c3", "sector1")
         self.add_connection("stairs floor 0","sector1")
+        self.add_connection("s0","stairs floor 0")
         self.add_connection("sector1", "library")
         self.add_connection("sector1", "toilet floor 0")
         self.add_connection("sector1", "store")
@@ -123,14 +127,16 @@ class MallNavigator:
         self.add_connection("sector2", "c6")
         self.add_connection("c6","circuit lab pcb and prototyping lab")
         #floor 1
-        self.add_connection("stairs floor 0","stairs floor 1")
+        self.add_connection("s0","stairs floor 1")
         self.add_connection("iqac room","s4 eee")
         self.add_connection("s4 eee","com lab 2")
+        self.add_connection("s4 eee","sector 3")
         self.add_connection("sector 3","office")
         self.add_connection("sector 3","com lab 2")
         self.add_connection("exam cell","office")
         self.add_connection("exam cell","sector 3")
         self.add_connection("principal room","stairs floor 1")
+        self.add_connection("stairs floor 1","s1")
         self.add_connection("stairs floor 1","placement cell")
         self.add_connection("sector 4","stairs floor 1")
         self.add_connection("sector 4","ceo room")
@@ -142,7 +148,7 @@ class MallNavigator:
         self.add_connection("s6 civil","sector 5")
         self.add_connection("s8 civil","sector 5")
         #floor 2
-        self.add_connection("stairs floor 2","stairs floor 1")
+        self.add_connection("s1","stairs floor 2")
         self.add_connection("stairs floor 2","s2 cse 1")
         self.add_connection("stairs floor 2","s2 cse 2")
         self.add_connection("s2 cse 2","sector 6")
@@ -151,6 +157,7 @@ class MallNavigator:
         self.add_connection("stairs floor 2","cse dept staff room")
         self.add_connection("stairs floor 2","s8 cse"),
         self.add_connection("stairs floor 2","s6 eee")
+        self.add_connection("stairs floor 2","s2")
         self.add_connection("s8 cse","sector 7")
         self.add_connection("s6 eee","sector 7")
         self.add_connection("toilet floor 2","sector 7")
