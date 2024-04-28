@@ -72,10 +72,6 @@ class MallNavigator:
             "s6 cse 1":(123, 117,2),
             "s6 cse 2":(121, 305,2),   
              
-               
-             
-                 
-                
             
         }
 
@@ -106,6 +102,7 @@ class MallNavigator:
         self.add_connection("c1", "c3") 
         self.add_connection("c3", "store") 
         self.add_connection("c3", "sector1")
+        self.add_connection("stairs floor 0","sector1")
         self.add_connection("sector1", "library")
         self.add_connection("sector1", "toilet floor 0")
         self.add_connection("sector1", "store")
