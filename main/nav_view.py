@@ -6,6 +6,17 @@ from django.contrib.auth.hashers import make_password, check_password
 import time
 from . import Graph
 
+def interchange_coordinates(points):
+    modified_points = []
+    
+    for point in points:
+        x, y, z = point
+        
+        modified_point = (y, x, z)
+        
+        modified_points.append(modified_point)
+    
+    return modified_points
 
 def nav(request,start,destination):
     start=start.lower()
@@ -13,6 +24,7 @@ def nav(request,start,destination):
     navigator = Graph.MallNavigator()
     navigator.create_connections()
     path = navigator.find_path(start, destination)
+    new_path=interchange_coordinates(path)
     average_time = navigator.calculate_average_time(start, destination, average_speed=1.5)
 
-    return JsonResponse({"message":"ok","path":path,"average_time":average_time})
+    return JsonResponse({"message":"ok","path":new_path,"average_time":average_time})
