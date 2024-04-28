@@ -178,7 +178,7 @@ padding:10px;
     height: 50px;
     border-radius: 2000px;
     margin: 5px;
-    border: 1px solid black;
+    border: 0;
 }
 .teachers > span{
     display: flex;
@@ -404,6 +404,7 @@ padding:10px;
     width: 400px;
     display: flex;
     flex-direction: column;
+
 }
 svg{
     width:300px;
