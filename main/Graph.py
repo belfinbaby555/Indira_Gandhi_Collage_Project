@@ -57,7 +57,7 @@ class MallNavigator:
             "s6 civil":(118, 119,1),
             "s8 civil":(117, 306,1),
             #floor 2
-            "stairs floor 2": (480, 160,2),
+            "stairs floor 2": (470, 160,2),
             "s2 cse 2":(533, 159,2),
             "s2 cse 1": (535, 243,2),
             "sector 6":(628, 194,2),

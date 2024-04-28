@@ -34,23 +34,31 @@
                 <h3>explore classes</h3>
                 <span style="display: flex; justify-content: space-between;">
                 <div class="explore">
-                        <h4>Chemistry Lab</h4>
+                        <h4>Digital Lab</h4>
                         <h5>Ashish</h5>
-                        <button onclick="nav(document.getElementById('u'),'report'),srol(500,'report') ,navigate('food','entrance',1)">Navigate</button>
+                        <button onclick="nav(document.getElementById('u'),'report'),srol(500,'report') ,navigate('stairs floor 0','digital lab')">Navigate</button>
                 </div>
                 <div class="explore">
-                    <h4>Chemistry Lab</h4>
+                    <h4>S8 Civil</h4>
                     <h5>Ashish</h5>
-                    <button onclick="nav(document.getElementById('u'),'report'),srol(500,'report') ,navigate('dairy','entrance',1)">Navigate</button>
+                    <button onclick="nav(document.getElementById('u'),'report'),srol(500,'report') ,navigate('stairs floor 0','s8 civil')">Navigate</button>
                 </div>
                 </span>
                 <h3>Staff Directory</h3>
 
                 <div class="teachers" onclick="srol(500,'home')">
-                    <img src="/static/images/chris.png"/>
+                    <img src="/static/images/aleena.jpeg"/>
                     <span>
-                        <h5>dgfidf</h5>
-                        <p>jdfsjdfh</p>
+                        <h5>Mrs. Aleena Rahman</h5>
+                        <p>Civil Department</p>
+                    </span>
+                    <img src="/static/images/Grey arrow.png" class="arrow"/>
+                </div> 
+                <div class="teachers" onclick="srol(500,'home')">
+                    <img src="/static/images/ameena.jpeg"/>
+                    <span>
+                        <h5>Mrs. Ameena M Aliyar</h5>
+                        <p>Computer Science Department</p>
                     </span>
                     <img src="/static/images/Grey arrow.png" class="arrow"/>
                 </div> 
@@ -85,8 +93,6 @@
             <span>
             <div class="nav_info" id="location">
                 <h4>Find class</h4>
-                <label for="floor">Enter Floor Number :</label>
-                <input type="number" max="3" min="0" maxlength="1"  id="floor" class="from" placeholder="Type '1' for  first floor" required/>
                 <label for="from">Enter Current location :</label>
                 <input type="text" id="from" class="from" placeholder="Type 'Entrance'" required/>
                 <label for="to">Enter Destination :</label>
@@ -96,11 +102,16 @@
             <div class="maps">
                 <button onclick="srol(-500,'report')"><</button>
                 <h2>navigation</h2>
-                <div class="map1" onclick="nextmap()">
-                    
-                    <svg id="map_route">
-                        
+                <div class="map1">  
+                    <svg id="ground" style="display: none;">
+                        <image height='100%' width='100%' href='/static/ground.svg'></image>     
                     </svg>
+                    <svg id="floor_1" style="display: none;">     
+                        <image height='100%' width='100%' href='/static/floor_1.svg'></image>  
+                    </svg>
+                    <svg id="floor_2" style="display: none;">   
+                        <image height='100%' width='100%' href='/static/floor_2.svg'></image>    
+                    </svg>                
                 </div>
             </div>
             </span>
