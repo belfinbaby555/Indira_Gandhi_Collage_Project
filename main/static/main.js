@@ -55,8 +55,11 @@ for(let j=0;j<=map.length-1;j++){
                 document.getElementById(map[path[i][2]]).innerHTML+="<line x1='"+x1+"%' y1='"+y1+"%' x2='"+x2+"%' y2='"+y2+"%' stroke-dasharray='5,2' style='stroke: blue;stroke-width: 3px;'></line>";
                 if(path[i-1][2]!=path[i][2]){
                     document.getElementById(map[path[i][2]]).innerHTML="<image height='100%' width='100%' href='/static/"+map[path[i][2]]+".svg'></image>  ";
-                    document.getElementById(map[path[i-1][2]]).innerHTML+="<circle onclick='switchmap("+path[i][2]+")' r='7' cx='"+(100-((path[i-1][1]/445)*100))+"%' cy='"+(path[i-1][0]/768)*100+"%' fill=red />"
-                    document.getElementById(map[path[i][2]]).innerHTML+="<circle onclick='switchmap("+path[i-1][2]+")' r='7' cx='"+(100-((path[i][1]/445)*100))+"%' cy='"+(path[i][0]/768)*100+"%' fill=red />"
+                    document.getElementById(map[path[i-1][2]]).innerHTML+="<circle onclick='switchmap("+path[i][2]+","+path[i-1][2]+")' r='7' cx='"+(100-((path[i-1][1]/445)*100))+"%' cy='"+(path[i-1][0]/768)*100+"%' fill=red />"
+                    document.getElementById(map[path[i][2]]).innerHTML+="<circle onclick='switchmap("+path[i-1][2]+","+path[i][2]+")' r='7' cx='"+(100-((path[i][1]/445)*100))+"%' cy='"+(path[i][0]/768)*100+"%' fill=red />"
+                    document.getElementById(map[path[i-1][2]]).innerHTML+="<circle class='circ' onclick='switchmap("+path[i][2]+","+path[i-1][2]+")' r='7' cx='"+(100-((path[i-1][1]/445)*100))+"%' cy='"+(path[i-1][0]/768)*100+"%' fill=red />"
+                    document.getElementById(map[path[i][2]]).innerHTML+="<circle class='circ' onclick='switchmap("+path[i-1][2]+","+path[i][2]+")' r='7' cx='"+(100-((path[i][1]/445)*100))+"%' cy='"+(path[i][0]/768)*100+"%' fill=red />"
+
                 }   
             }
             document.getElementById(map[path[path.length-1][2]]).innerHTML+="<circle r='7' cx='"+(100-((path[path.length-1][1]/445)*100))+"%' cy='"+(path[path.length-1][0]/768)*100+"%' fill=green />"
@@ -70,14 +73,23 @@ for(let j=0;j<=map.length-1;j++){
     })
 }
 
-function switchmap(a){
+function switchmap(a,b){
     var map=["ground","floor_1","floor_2"];
+
+    document.getElementById(map[b]).style.animation='map 1s normal';
+    
+    setTimeout(()=>{
 
     for(let j=0;j<=map.length-1;j++){
         document.getElementById(map[j]).style.display='none';
     }
-
     document.getElementById(map[a]).style.display='block';
+    document.getElementById(map[a]).style.animation='map 1s reverse'
+    document.getElementById(map[b]).style.animation=null;
+    setTimeout(()=>{document.getElementById(map[a]).style.animation=null},1000)
+},1000);
+
+    
 }
 
 function navigate(from,to){
@@ -107,8 +119,11 @@ for(let j=0;j<=map.length-1;j++){
                 document.getElementById(map[path[i][2]]).innerHTML+="<line x1='"+x1+"%' y1='"+y1+"%' x2='"+x2+"%' y2='"+y2+"%' stroke-dasharray='5,2' style='stroke: blue;stroke-width: 3px;'></line>";
                 if(path[i-1][2]!=path[i][2]){
                     document.getElementById(map[path[i][2]]).innerHTML="<image height='100%' width='100%' href='/static/"+map[path[i][2]]+".svg'></image>  ";
-                    document.getElementById(map[path[i-1][2]]).innerHTML+="<circle onclick='switchmap("+path[i][2]+")' r='7' cx='"+(100-((path[i-1][1]/445)*100))+"%' cy='"+(path[i-1][0]/768)*100+"%' fill=red />"
-                    document.getElementById(map[path[i][2]]).innerHTML+="<circle onclick='switchmap("+path[i-1][2]+")' r='7' cx='"+(100-((path[i][1]/445)*100))+"%' cy='"+(path[i][0]/768)*100+"%' fill=red />"
+                    document.getElementById(map[path[i-1][2]]).innerHTML+="<circle onclick='switchmap("+path[i][2]+","+path[i-1][2]+")' r='7' cx='"+(100-((path[i-1][1]/445)*100))+"%' cy='"+(path[i-1][0]/768)*100+"%' fill=red />"
+                    document.getElementById(map[path[i][2]]).innerHTML+="<circle onclick='switchmap("+path[i-1][2]+","+path[i][2]+")' r='7' cx='"+(100-((path[i][1]/445)*100))+"%' cy='"+(path[i][0]/768)*100+"%' fill=red />"
+                    document.getElementById(map[path[i-1][2]]).innerHTML+="<circle class='circ' onclick='switchmap("+path[i][2]+","+path[i-1][2]+")' r='7' cx='"+(100-((path[i-1][1]/445)*100))+"%' cy='"+(path[i-1][0]/768)*100+"%' fill=red />"
+                    document.getElementById(map[path[i][2]]).innerHTML+="<circle class='circ' onclick='switchmap("+path[i-1][2]+","+path[i][2]+")' r='7' cx='"+(100-((path[i][1]/445)*100))+"%' cy='"+(path[i][0]/768)*100+"%' fill=red />"
+
                 }   
             }
             document.getElementById(map[path[path.length-1][2]]).innerHTML+="<circle r='7' cx='"+(100-((path[path.length-1][1]/445)*100))+"%' cy='"+(path[path.length-1][0]/768)*100+"%' fill=green />"
@@ -120,4 +135,83 @@ for(let j=0;j<=map.length-1;j++){
             console.log("error")
         }
     })
+}
+
+function autocomp(ids,idres){
+    var destination=[
+        "porch",
+        "toilet floor 0",
+        "store",
+        "library",
+        'stairs floor 0',
+        "iedc room",
+        "micro controller lab",
+        "sector1",
+        "security room",
+        "eee staff room",
+        "class room floor 0",
+        "power electronics lab",
+        "digital lab",
+        "circuit lab pcb and prototyping lab",
+        "stairs floor 1",
+        "iqac room",
+        "s4 eee",
+        "com lab 2",
+        "office",
+        "exam cell",
+        "principal room",
+        "sick room",
+        "ceo room",
+        "s4 civil",
+        "civil dept staff room",
+        "toilet floor 1",
+        "s6 civil",
+        "s8 civil",
+        "stairs floor 2",
+        "s2 cse 2",
+        "s2 cse 1",
+        "seminar hall",
+        "com lab",
+        "cse dept staff room",
+        "s8 cse",
+        "s6 eee",
+        "s6 combined class",
+        "toilet floor 2",
+        "s6 cse 1",
+        "s6 cse 2",
+  ];
+    let from=document.getElementById(ids).value;
+    
+    document.getElementById(idres).innerHTML=null;
+  
+    for(let i=0;i<=destination.length-1;i++){
+  
+        if(destination[i].slice(0,from.length)==from.toLowerCase()){
+          document.getElementById(idres).innerHTML+=
+          "<p onclick='document.getElementById(\""+ids+"\").value=\""+destination[i]+"\"; document.getElementById(\""+idres+"\").innerHTML=\"\";'>"+destination[i]+"</p>";
+        }
+        if(from==""){
+          document.getElementById(idres).innerHTML=null;
+        }
+      
+    }
+    
+  }
+  
+function teacherinfo(a){
+    var info=[["Ameena M Aliyar","Assistant professor","Computer Science Department","ameena","34","ameenaaliyar@gmail.com","+91 81290 25553","cse dept staff room"],
+                ["Aleena Rahman","Assistant Professor","Civil Department","aleena","27","aleenarahman@gmail.com","+91 89463 73154","civil dept staff room"]];
+
+                console.log("hghg");
+
+                document.getElementById("teach_img").src="/static/images/"+info[a][3]+".jpeg";
+                document.getElementById("teach_name").innerHTML=info[a][0];
+                document.getElementById("teach_pos").innerHTML=info[a][1];
+                document.getElementById("name").innerHTML="Name<b>---------</b>: "+info[a][0];
+                document.getElementById("Age").innerHTML="Age<b>-----------.</b>: "+info[a][4];
+                document.getElementById("email").innerHTML="Email<b>---------.</b>: "+info[a][5];
+                document.getElementById("phone").innerHTML="Phone<b>-------..</b>: "+info[a][6];
+                document.getElementById("dept").innerHTML="Department<b>.</b>: "+info[a][2];
+
+                navigate('porch',info[a][7]);
 }

@@ -90,7 +90,7 @@ padding-top:100px;
 }
 .upload{
 width:400px;
-height:200px;
+height:fit-content;
 background-color:white;
 margin :0px auto;
 display:flex;
@@ -164,7 +164,7 @@ padding:10px;
 }
 .teachers {
     width: 100%;
-    height: 100px;
+    height: 80px;
     border-radius: 10px;
     background-color: var(--translusent-blue);
     display: flex;
@@ -196,7 +196,7 @@ padding:10px;
 }
 .teachers > span > p{
     margin: 0;
-    color: rgb(46, 46, 46);
+    color: rgb(92, 92, 92);
     font-size: 15px;
 }
 .teachers > .arrow{
@@ -241,7 +241,7 @@ padding:10px;
     margin-bottom: 10px;
     font-weight: 400;
 }
-.people > button{
+.back{
     width: 50px;
     height: 50px;
     border-radius: 1000px;
@@ -255,6 +255,18 @@ padding:10px;
     border:0;
     outline: 0;
 }
+.navig{
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    background-color: var(--main-blue);
+    border: 0;
+    outline: 0;
+    color: white;
+    font-size: 22px;
+    margin-top: 20px;
+    font-family: "Tilt Neon", sans-serif !important;
+}
 .personal_info{
     width: calc(100% - 40px);
     padding: 10px;
@@ -265,7 +277,6 @@ padding:10px;
 }
 .personal_info > h5{
     color: var(--main-blue);
-    text-transform: capitalize;
     text-align: center;
     margin: 0px;
     font-size: 18px;
@@ -275,7 +286,6 @@ padding:10px;
 }
 .personal_info > p{
     font-weight: 500;
-    text-transform: capitalize;
     margin: 5px;
 }
 .personal_info > p >b{
@@ -318,7 +328,7 @@ padding:10px;
     flex-direction:column;
     box-sizing:border-box;
     padding:10px;
-    overflow-x: hidden;
+    overflow-x: scroll;
     margin: auto;
     scrollbar-width: 0px;
     scroll-behavior: smooth;
@@ -339,6 +349,8 @@ padding:10px;
     flex-direction: column;
     box-sizing: border-box;
     padding: 10px;
+    position: relative;
+    overflow-y: visible;
 }
 .nav_info > h4{
     margin: 10px;
@@ -360,7 +372,24 @@ padding:10px;
 .nav_info > label{
     font-size: 18px;
     font-weight: 600;
+    position: relative;
 
+}
+.from_result,.to_result{
+    width: calc(100% - 20px);;
+    height:fit-content;
+    border-radius: 5px;
+    background-color: rgb(250,250,250);
+    text-align: center;
+    left: 10px;
+    position: absolute;
+    transform: translateY(60px);
+    z-index: 100;
+}
+.from_result > p,.to_result > p{
+    font-weight: 300;
+    color: black;
+    text-transform: capitalize;
 }
 .nav_info > button{
     width: 100%;
@@ -381,6 +410,8 @@ padding:10px;
     flex-direction: column;
     box-sizing: border-box;
     padding: 15px;
+    padding-left: 25px;
+    
 }
 .maps > button{
     width: 50px;
@@ -405,6 +436,30 @@ padding:10px;
     display: flex;
     flex-direction: column;
 
+}
+svg{
+    margin: auto;
+}
+.circ{
+    
+    animation:pulse 1s infinite;
+}
+@keyframes pulse {
+    0%{r:7;opacity: 1;}
+    100%{r:15;opacity: 0;}
+}
+#ground ,#floor_1,#floor_2{
+    transform:perspective(1000px) rotateX(0deg) translateZ(0px);
+   
+}
+
+#floor_2,#floor_1{
+    transform: translateZ(-600px);
+}
+@keyframes map {
+    0%{transform:perspective(1000px) rotateX(0deg) translateZ(0px);}
+    50%{transform:perspective(1000px) rotateX(70deg) translateZ(50px);}
+    100%{transform:perspective(1000px) rotateX(70deg) translateZ(-600px);}
 }
 svg{
     width:300px;

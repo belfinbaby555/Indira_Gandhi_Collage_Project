@@ -34,19 +34,19 @@
                 <h3>explore classes</h3>
                 <span style="display: flex; justify-content: space-between;">
                 <div class="explore">
-                        <h4>Digital Lab</h4>
-                        <h5>Ashish</h5>
-                        <button onclick="nav(document.getElementById('u'),'report'),srol(500,'report') ,navigate('stairs floor 0','digital lab')">Navigate</button>
+                        <h4>Computer Lab</h4>
+                        <h5>Mrs. Ameena M Aliyar</h5>
+                        <button onclick="nav(document.getElementById('u'),'report'),srol(500,'report') ,navigate('porch','com lab')">Navigate</button>
                 </div>
                 <div class="explore">
                     <h4>S8 Civil</h4>
-                    <h5>Ashish</h5>
-                    <button onclick="nav(document.getElementById('u'),'report'),srol(500,'report') ,navigate('stairs floor 0','s8 civil')">Navigate</button>
+                    <h5>Mrs. Aleena Rahman</h5>
+                    <button onclick="nav(document.getElementById('u'),'report'),srol(500,'report') ,navigate('porch','s8 civil')">Navigate</button>
                 </div>
                 </span>
                 <h3>Staff Directory</h3>
 
-                <div class="teachers" onclick="srol(500,'home')">
+                <div class="teachers" onclick="srol(500,'home'),teacherinfo(1)">
                     <img src="/static/images/aleena.jpeg"/>
                     <span>
                         <h5>Mrs. Aleena Rahman</h5>
@@ -54,7 +54,7 @@
                     </span>
                     <img src="/static/images/Grey arrow.png" class="arrow"/>
                 </div> 
-                <div class="teachers" onclick="srol(500,'home')">
+                <div class="teachers" onclick="srol(500,'home'),teacherinfo(0)">
                     <img src="/static/images/ameena.jpeg"/>
                     <span>
                         <h5>Mrs. Ameena M Aliyar</h5>
@@ -65,25 +65,26 @@
                 
             </div>
             <div class="people" id="peoples">
-                <button onclick="srol(-500,'home')"><</button>
-                <img src="/static/images/chris.png"/>
-                <h3>Teacher 1</h3>
-                <h4>Asst. professor</h4>
+                <button class="back" onclick="srol(-500,'home')"><</button>
+                <img id="teach_img" src=""/>
+                <h3 id="teach_name"></h3>
+                <h4 id="teach_pos"></h4>
             <div class="personal_info">
                 <h5>General Information</h5>
-                <p id="name">Name<b>-----</b>: Teacher 1</p>
-                <p id="Age">Age<b>-------.</b>: 48</p>
-                <p id="email">Email<b>-----.</b>: examole@gmail.com</p>
-                <p id="phone">Phone<b>---..</b>: +91 1234556789</p>
+                <p id="name"></p>
+                <p id="Age"></p>
+                <p id="email"></p>
+                <p id="phone"></p>
+                <p id="dept"></p>
             </div>
-            <div class="education">
+            <!-- <div class="education">
                 <h5>Experience</h5>
                 <p id="btech">Lecturer | iit kanpur<br>
                     <b>Jnuary 2002 - march 2005</b>
                 </p>
                 <p id="btech">assitant professor<br><b>march 2003 - january 2005</b></p>
-            </div>
-            
+            </div> -->
+            <button class="navig" onclick="nav(document.getElementById('u'),'report'),srol(500,'report')">Navigate</button>
             </div>
             </span>
         </div>
@@ -93,10 +94,10 @@
             <span>
             <div class="nav_info" id="location">
                 <h4>Find class</h4>
-                <label for="from">Enter Current location :</label>
-                <input type="text" id="from" class="from" placeholder="Type 'Entrance'" required/>
-                <label for="to">Enter Destination :</label>
-                <input type="text" id="to" class="to" placeholder="Type 'S6-ECE" required/>
+                <label for="from">Enter Current location : <div class="from_result" id="from_result"></div></label>
+                <input type="text" onkeyup="autocomp('from','from_result')"  id="from" class="from" placeholder="Type 'Entrance'" required/>
+                <label for="to">Enter Destination : <div class="to_result" id="to_result"></div></label>
+                <input type="text" onkeyup="autocomp('to','to_result')" id="to" class="to" placeholder="Type 'S6-ECE"  required/>
                 <button onclick="locate()">Navigate</button>
             </div>
             <div class="maps">
