@@ -22,7 +22,25 @@ function srol(a,b){
 }
 
 
+function ham(){
+var ha=document.getElementById("nav").style;
 
+    if(ha.width=="0px"){
+        ha.display="block"
+        setTimeout(()=>{
+            ha.width="300px";
+            ha.padding="75px 10px";
+        },1);
+
+    }
+    else{
+        ha.width="0px";
+        ha.padding="0px";
+        
+    setTimeout(()=>{
+        ha.display="none"
+    },500);}
+}
 
 
 
