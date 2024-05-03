@@ -30,7 +30,7 @@ function srol(a,b){
 function locate(){
     var from=document.getElementById("from").value;
     var to=document.getElementById("to").value;
-    var map=["ground","floor_1","floor_2"];
+    var map=["ground","floor-1","floor-2"];
 
     fetch("http://127.0.0.1:8000/nav/"+from+"/"+to)
     .then((res)=>(res.json()))
@@ -74,9 +74,16 @@ for(let j=0;j<=map.length-1;j++){
 }
 
 function switchmap(a,b){
-    var map=["ground","floor_1","floor_2"];
+    var map=["ground","floor-1","floor-2"];
 
-    document.getElementById(map[b]).style.animation='map 1s normal';
+    if(a>b){
+    document.getElementById(map[b]).style.animation='map_up 1s normal';
+    console.log("up");
+    }
+    else{
+        document.getElementById(map[b]).style.animation='map_down 1s normal';
+        console.log("down")
+    }
     
     setTimeout(()=>{
 
@@ -84,7 +91,13 @@ function switchmap(a,b){
         document.getElementById(map[j]).style.display='none';
     }
     document.getElementById(map[a]).style.display='block';
-    document.getElementById(map[a]).style.animation='map 1s reverse'
+    document.getElementById("floor_num").innerHTML="Floor: "+map[a];
+    if(a>b){
+        document.getElementById(map[a]).style.animation='map_down 1s reverse'
+        }
+    else{
+        document.getElementById(map[a]).style.animation='map_up 1s reverse';
+        }
     document.getElementById(map[b]).style.animation=null;
     setTimeout(()=>{document.getElementById(map[a]).style.animation=null},1000)
 },1000);
@@ -94,7 +107,7 @@ function switchmap(a,b){
 
 function navigate(from,to){
     
-    var map=["ground","floor_1","floor_2"];
+    var map=["ground","floor-1","floor-2"];
 
     fetch("http://127.0.0.1:8000/nav/"+from+"/"+to)
     .then((res)=>(res.json()))
@@ -107,6 +120,7 @@ for(let j=0;j<=map.length-1;j++){
     document.getElementById(map[j]).style.display='none';
 }
             document.getElementById(map[path[0][2]]).style.display='block';
+            document.getElementById("floor_num").innerHTML="Floor: "+map[path[0][2]];
             document.getElementById(map[path[0][2]]).innerHTML="<image height='100%' width='100%' href='/static/"+map[path[0][2]]+".svg'></image>  ";
             
 
@@ -179,6 +193,8 @@ function autocomp(ids,idres){
         "toilet floor 2",
         "s6 cse 1",
         "s6 cse 2",
+        "aleena rahman",
+        "ameena m aliyar"
   ];
     let from=document.getElementById(ids).value;
     

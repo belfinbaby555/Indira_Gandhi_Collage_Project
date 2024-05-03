@@ -6,13 +6,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/mobile.css">
     <script src="static/main.js"></script>
 </head>
 
 <body>
     <div class="topbar">
+        <button class="ham"> ☰ </button>
         <img src="static/images/name.jpg"/>
-        <img src="static/images/logo.jpg"/>
+        <img src="static/images/logo.jpg" class="logo"/>
     </div>
     <nav>
         <h3>name</h3>
@@ -28,8 +30,9 @@
             <div class="upload" id="upload">
                  {% csrf_token %} 
                 <div class="search">
-                    <img src="static/images/search.png"/>
-                    <input type="search" placeholder="Search for class,teachers,..."/>
+                    <img src="static/images/search.png" onclick="nav(document.getElementById('u'),'report'),srol(500,'report') ,navigate('porch',document.getElementById('search').value)"/>
+                    <input type="search" id="search" onkeyup="autocomp('search','search_result')"  placeholder="Search for class,teachers,..."/>
+                    <div class="search_result" id="search_result"></div>
                 </div>
                 <h3>explore classes</h3>
                 <span style="display: flex; justify-content: space-between;">
@@ -85,6 +88,7 @@
                 <p id="btech">assitant professor<br><b>march 2003 - january 2005</b></p>
             </div> -->
             <button class="navig" onclick="nav(document.getElementById('u'),'report'),srol(500,'report')">Navigate</button>
+            
             </div>
             </span>
         </div>
@@ -101,16 +105,16 @@
                 <button onclick="locate()">Navigate</button>
             </div>
             <div class="maps">
-                <button onclick="srol(-500,'report')"><</button>
-                <h2>navigation</h2>
+                <button onclick="srol(-500,'report')"><b><</b> <p>Navigation</p></button>
+                <p id="floor_num"></p>
                 <div class="map1">  
                     <svg id="ground" style="display: none;">
                         <image height='100%' width='100%' href='/static/ground.svg'></image>     
                     </svg>
-                    <svg id="floor_1" style="display: none;">     
+                    <svg id="floor-1" style="display: none;">     
                         <image height='100%' width='100%' href='/static/floor_1.svg'></image>  
                     </svg>
-                    <svg id="floor_2" style="display: none;">   
+                    <svg id="floor-2" style="display: none;">   
                         <image height='100%' width='100%' href='/static/floor_2.svg'></image>    
                     </svg>                
                 </div>
