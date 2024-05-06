@@ -158,6 +158,7 @@ padding:10px;
     font-weight: 400;
     margin: 0;
     padding: 0;
+    text-transform: capitalize;
 }
 .explore > h5{
     font-size: 15px;

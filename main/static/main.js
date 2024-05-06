@@ -1,3 +1,4 @@
+
 function nav(a,b){
     var op=["h","u","a","l"];
     var menu=["home","report","about"];
@@ -109,7 +110,7 @@ function switchmap(a,b){
         document.getElementById(map[j]).style.display='none';
     }
     document.getElementById(map[a]).style.display='block';
-    document.getElementById("floor_num").innerHTML="Floor: "+map[a];
+    document.getElementById("floor_num").innerHTML=map[a];
     if(a>b){
         document.getElementById(map[a]).style.animation='map_down 1s reverse'
         }
@@ -138,7 +139,7 @@ for(let j=0;j<=map.length-1;j++){
     document.getElementById(map[j]).style.display='none';
 }
             document.getElementById(map[path[0][2]]).style.display='block';
-            document.getElementById("floor_num").innerHTML="Floor: "+map[path[0][2]];
+            document.getElementById("floor_num").innerHTML=map[path[0][2]];
             document.getElementById(map[path[0][2]]).innerHTML="<image height='100%' width='100%' href='/static/"+map[path[0][2]]+".svg'></image>  ";
             
 
@@ -177,7 +178,7 @@ function autocomp(ids,idres){
         "library",
         'stairs floor 0',
         "iedc room",
-        "micro controller lab",
+        "microcontroller lab",
         "sector1",
         "security room",
         "eee staff room",

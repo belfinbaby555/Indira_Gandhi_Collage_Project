@@ -19,7 +19,7 @@
     <nav id="nav">
         <h3>name</h3>
         <a id="h" onclick="nav(this,'home')"><img src="static/images/home.png"/>Home</a>
-        <a id="u" onclick="nav(this,'report')"><img src="static/images/qr.png"/>Find Class</a>
+        <a id="u" onclick="nav(this,'report')"><img src="static/images/map.png"/>Find Class</a>
         <a id="a" onclick="nav(this,'about')"><img src="static/images/about.png"/>About Us</a>
         <a id="l" onclick="window.location.href='/static/log.html'"><img src="static/images/log.png"/>Logout</a>
     </nav>
@@ -99,9 +99,9 @@
             <div class="nav_info" id="location">
                 <h4>Find class</h4>
                 <label for="from">Enter Current location : <div class="from_result" id="from_result"></div></label>
-                <input type="text" onkeyup="autocomp('from','from_result')"  id="from" class="from" placeholder="Type 'Entrance'" required/>
+                <input type="text" onkeyup="autocomp('from','from_result')"  id="from" class="from" placeholder="Type 'Porch'" required/>
                 <label for="to">Enter Destination : <div class="to_result" id="to_result"></div></label>
-                <input type="text" onkeyup="autocomp('to','to_result')" id="to" class="to" placeholder="Type 'S6-ECE"  required/>
+                <input type="text" onkeyup="autocomp('to','to_result')" id="to" class="to" placeholder="Type 'S6-ECE'"  required/>
                 <button onclick="locate()">Navigate</button>
             </div>
             <div class="maps">
@@ -132,20 +132,40 @@
             <h3>Anakha S</h3>
             <h3>Arsha</h3>
             <h3>Devanand</h3>
-            
-            <h4>Face Recognition and Social Distancing Monitoring with dlib</h4>
-            <p><b>DLIB</b> is a powerful library for machine learning, computer vision, and deep learning. It provides tools and utilities for <b>face recognition</b>, <b>object detection</b>, <b>facial landmark detection</b>, and more.</p>
-            <p>With dlib, <b>Safe Zone</b> can accurately identify individuals, track their positions, and monitor social distancing compliance in crowded spaces.</p>
-            <h2>How it works</h2>
-            <p>dlib's face recognition and social distancing monitoring involve several steps:</p>
-            <ol>
-                <li><b>Face detection:</b> Detecting faces in images using algorithms like HOG (Histogram of Oriented Gradients) or CNNs (Convolutional Neural Networks).</li>
-                <li><b>Facial landmark detection:</b> Identifying key facial landmarks such as eyes, nose, and mouth.</li>
-                <li><b>Face recognition:</b> Matching detected faces against known individuals in a database.</li>
-                <li><b>Social distancing monitoring:</b> Analyzing the positions of recognized individuals to measure distances between them.</li>
-                <li><b>Alerting system:</b> Generating alerts when individuals are too close to each other, violating social distancing guidelines.</li>
-            </ol>
-            <p>By utilizing dlib's face recognition and social distancing monitoring capabilities, <b>Safe Zone</b> ensures the safety of individuals in public spaces by promoting social distancing practices.</p>
+            <h2>Key Features:</h2>
+            <h4>Graph-based Navigation</h4>
+            <p> The system utilizes a graph data structure to model the campus layout, with locations represented as nodes and pathways as edges.
+             </p>   <h4>Efficient Pathfinding:</h4>
+                <p> Leveraging <b>Dijkstra's algorithm</b>, the Navigator efficiently calculates the shortest path between two points on campus.
+            </p>
+                <h4>Location-aware Routing</h4>
+                <p>Users can input their current location and desired destination, and the system provides step-by-step directions to reach the target location.
+            </p>
+                    <h4>Customizable</h4>
+               <p> The Navigator allows for easy addition of new locations and connections, making it<b> adaptable to changes</b> in campus infrastructure.
+                </p>
+                <h2>How it Works</h2>
+                
+               <p> <b>Initialization:</b> Upon initialization, the Navigator constructs a graph representing the campus layout, with nodes representing key locations and edges representing pathways between them.
+               </p>
+               <p><b>Pathfinding:</b> Users can request navigation between any two points on campus. The system employs Dijkstra's algorithm to find the shortest path, considering factors such as distance and floor level.
+                </p>
+                <p><b>Distance Calculation:</b> To estimate travel time, the Navigator calculates the distance between consecutive nodes along the path and factors in an average walking speed.
+                </p>
+                  <p><b> Output:</b> Users receive clear directions and estimated travel time to their destination, facilitating efficient navigation across the campus.
+                </p>
+               <h2>Future Enhancements:</h2>
+                
+                <p><b>Integration with Mobile Apps:</b> The Navigator can be integrated into mobile applications, providing on-the-go navigation for students and visitors.
+                </p>
+                <p> <b>Real-time Updates:</b> Incorporating real-time data on campus events, closures, and crowd density can enhance the accuracy and effectiveness of navigation suggestions.
+                </p>
+                 <p><b>Accessibility Features:</b> Implementing features such as wheelchair-accessible routes and audio-based navigation can cater to the diverse needs of campus users.
+                </p>
+                <h2>Conclusion:</h2>
+                
+               <p> The Campus Navigator offers an intuitive solution to the common challenge of navigating large college campuses. By leveraging graph-based algorithms and user-friendly interfaces, it aims to streamline campus exploration and enhance the overall student experience.
+            </p>
         </div>
         
     </div>
